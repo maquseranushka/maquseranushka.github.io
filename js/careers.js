@@ -51,10 +51,11 @@ function loadIndiaCareers(sNewsData) {
         oNewsData = parser.parseFromString(sNewsData, "text/xml");
 
         if (oNewsData.getElementsByTagName('feed') && !oNewsData.getElementsByTagName('entry').length) {
-           // oNewsData.getElementsByTagName('entry');
-          //  renderIndiaTitle(oNewsData.getElementsByTagName('entry'));
+             oNewsData.getElementsByTagName('entry');
+            
            
         }
+        renderIndiaTitle(oNewsData.getElementsByTagName('entry'));
         
 
     } catch (exception) {
@@ -73,10 +74,10 @@ function loadRedmondCareers(sNewsData) {
         oNewsData = parser.parseFromString(sNewsData, "text/xml");
 
         if(oNewsData.getElementsByTagName('feed') && !oNewsData.getElementsByTagName('entry').length) {
-          //  oNewsData.getElementsByTagName('entry');
-             //renderRedmondTitle(oNewsData.getElementsByTagName('entry'));
+           oNewsData.getElementsByTagName('entry');
+           
         }
-       
+         renderRedmondTitle(oNewsData.getElementsByTagName('entry'));
 
     } catch (exception) {
         oRedmondJobPostSection.html(sNoJobMessage).removeClass("Loading").removeClass("LoadingHeight");
