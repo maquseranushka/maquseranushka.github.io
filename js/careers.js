@@ -52,9 +52,7 @@ function loadIndiaCareers(sNewsData) {
 
         if (oNewsData.getElementsByTagName('feed') && !oNewsData.getElementsByTagName('entry').length) {
              oNewsData.getElementsByTagName('entry');
-            
-           
-        }
+          }
         renderIndiaTitle(oNewsData.getElementsByTagName('entry'));
         
 
@@ -75,8 +73,7 @@ function loadRedmondCareers(sNewsData) {
 
         if(oNewsData.getElementsByTagName('feed') && !oNewsData.getElementsByTagName('entry').length) {
            oNewsData.getElementsByTagName('entry');
-           
-        }
+          }
          renderRedmondTitle(oNewsData.getElementsByTagName('entry'));
 
     } catch (exception) {
