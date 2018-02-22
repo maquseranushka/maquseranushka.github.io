@@ -1,4 +1,4 @@
-﻿var oIndiaJobPostSection,
+var oIndiaJobPostSection,
     oRedmondJobPostSection,
     oNewsData = null,
 sTemplate = '<div class="accordion-section"><h6 class="accordion-title">@title</h6><div class="accordion-content">@content</div></div>'
@@ -51,10 +51,11 @@ function loadIndiaCareers(sNewsData) {
         oNewsData = parser.parseFromString(sNewsData, "text/xml");
 
         if (oNewsData.getElementsByTagName('feed') && !oNewsData.getElementsByTagName('entry').length) {
-            oNewsData.getElementsByTagName('entry');
+           // oNewsData.getElementsByTagName('entry');
+            renderIndiaTitle(oNewsData.getElementsByTagName('entry'));
            
         }
-        renderIndiaTitle(oNewsData.getElementsByTagName('entry'));
+        
 
     } catch (exception) {
         oIndiaJobPostSection.html(sNoJobMessage).removeClass("Loading").removeClass("LoadingHeight");
@@ -72,9 +73,10 @@ function loadRedmondCareers(sNewsData) {
         oNewsData = parser.parseFromString(sNewsData, "text/xml");
 
         if(oNewsData.getElementsByTagName('feed') && !oNewsData.getElementsByTagName('entry').length) {
-            oNewsData.getElementsByTagName('entry');
+          //  oNewsData.getElementsByTagName('entry');
+             renderRedmondTitle(oNewsData.getElementsByTagName('entry'));
         }
-        renderRedmondTitle(oNewsData.getElementsByTagName('entry'));
+       
 
     } catch (exception) {
         oRedmondJobPostSection.html(sNoJobMessage).removeClass("Loading").removeClass("LoadingHeight");
